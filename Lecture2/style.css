@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url(./Amsterdam\ Handwriting.ttf);
+}
+
+@font-face {
+    font-family: 'usingSomewhere';
+    src: url(./NType82-Regular.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+.headings{
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+#main_heading{
+    padding: 100px 0;
+    background-color: palevioletred;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#main_heading h1{
+    font-family: 'MyFont';
+}
+
+#main_heading p{
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+#section{
+    padding :60px 40px;
+    text-align: center;
+    background-color: rgba(255, 228, 196, 0.785);
+}
+
+#section p{
+    margin-top: 10px;
+}
+
+.details{
+    margin: 30px auto;
+    padding: 40px;
+    width: 85%;
+}
+
+.style-detail{
+    background-color: aliceblue;
+    padding: 14px 0;
+    width: 70%;
+    margin: auto;
+    font-family: usingSomewhere, sans-serif;
+}
+
+#about-me{
+    background-color: aliceblue;
+    font-family: sans-serif;
+}
+
+#about-me p{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.779);
+}
+
+#education{
+    background-color: rgba(0, 255, 255, 0.195);
+}
+
+#education p{
+    font-style: italic;
+}
+
+#skills{
+    background-color: rgba(162, 46, 201, 0.208);
+}
+
+#skills p{
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+#projects{
+    background-color: rgba(165, 42, 42, 0.215);
+}
+
+#contact-me{
+    background-color: rgba(0, 0, 139, 0.252);
+}
+
+#footer{
+    background-color: palevioletred;
+    text-align: center;
+    color: aliceblue;
+    padding: 40px ;
+    font-size: 18px;
+}
