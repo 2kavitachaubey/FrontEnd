@@ -1,0 +1,149 @@
+@font-face {
+  font-family: "cafeVibe";
+  src: url(./Hackensack-SemiBold.otf);
+}
+
+@keyframes smoothAppear{
+    0%{
+        transform: translate(-50%, calc(-50% + 60px));
+        opacity: 0;
+    }
+
+    100%{
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "cafeVibe";
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+  font-size: 20px;
+  background-color: rgba(122, 1, 1, 0.893);
+}
+
+nav img {
+  height: 70px;
+  width: 70px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 60px;
+  list-style: none;
+  color: white;
+}
+
+.header-video {
+  height: calc(100vh - 70px);
+  width: 100%;
+  overflow: hidden;
+
+  position: relative;
+}
+
+.header-video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.video-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  text-align: center;
+  color: white;
+  animation: smoothAppear 3s ease forwards;
+}
+
+.video-text h1{
+  font-size: 40px;
+}
+
+.video-text button{
+  margin-top: 20px;
+  padding: 20px 30px;
+  font-size: 18px;
+  border-radius: 50px;
+  border: none;
+  color: rgba(122, 1, 1, 0.893);
+}
+
+.video-text button:hover{
+  background: linear-gradient(to top, rgba(206, 84, 84, 0.815), white);
+}
+
+.cart-section{
+  margin: 50px 20px;
+}
+
+.cart-section h1{
+  text-align: center;
+  font-size: 40px;
+  margin: 20px;
+  color: rgba(122, 1, 1, 0.893);
+}
+
+.cart-items{
+  columns: 4;
+  column-gap: 20px;
+  padding: 20px 30px;
+}
+.cart{
+  break-inside: avoid;
+  margin-bottom: 20px;
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.cart img{
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+}
+
+.cart-text{
+  width: 100%;
+  height: 40%;
+
+  font-size: 24px;
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  bottom: -40%;
+
+  background:linear-gradient(to top, rgba(206, 84, 84, 0.815), transparent);
+
+  color: white;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.8s ease;
+}
+
+.cart:hover .cart-text{
+  bottom: 0;
+}
