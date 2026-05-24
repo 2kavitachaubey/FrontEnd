@@ -8,6 +8,34 @@ html,body{
     width: 100%;
 }
 
-h1{
-    color: blue;
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Nested
+main{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    @include flexCenter();
+
+    section{
+        height: 50%;
+        width: 50%;
+        background-color: bisque;
+        @include flexCenter();
+
+        h1{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    }
+}
+
+.blue{
+    @include button-style(blue);
+}
+.red{
+    @include button-style(red);
 }
