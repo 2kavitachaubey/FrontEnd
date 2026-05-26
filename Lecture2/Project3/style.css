@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "sec1 sec1 sec2 sec2 sec2" "sec1 sec1 sec3 sec4 sec5";
+  gap: 20px;
+  padding: 20px;
+}
+main section {
+  overflow: hidden;
+  border-radius: 20px;
+}
+main section img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main #sec1 {
+  grid-area: sec1;
+}
+main #sec2 {
+  grid-area: sec2;
+}
+main #sec3 {
+  grid-area: sec3;
+}
+main #sec4 {
+  grid-area: sec4;
+}
+main #sec5 {
+  grid-area: sec5;
+}/*# sourceMappingURL=style.css.map */
