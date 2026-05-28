@@ -12,7 +12,7 @@ body {
 
 html {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: rgb(244, 244, 244);
+  color: rgb(235, 235, 235);
   font-size: clamp(14px, 1vw, 18px);
 }
 
@@ -31,21 +31,21 @@ main {
   gap: 0rem;
   align-items: center;
 }
-main section {
+main section.view1 {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
 }
-main section .top {
+main section.view1 .top {
   width: 100%;
 }
-main section .top img {
+main section.view1 .top img {
   width: 100%;
   border-radius: 1rem;
 }
-main section .bottom {
+main section.view1 .bottom {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -54,21 +54,21 @@ main section .bottom {
   padding: 1rem;
   background-color: rgb(39, 39, 39);
 }
-main section .bottom .text {
+main section.view1 .bottom .text {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
 }
-main section .bottom .text h1 {
+main section.view1 .bottom .text h1 {
   font-weight: 400;
 }
-main section .bottom .text p {
+main section.view1 .bottom .text p {
   font-weight: 300;
   font-size: 1.5rem;
   opacity: 0.6;
   line-height: 1.5;
 }
-main section .bottom .text button {
+main section.view1 .bottom .text button {
   width: -moz-fit-content;
   width: fit-content;
   border: none;
@@ -76,28 +76,135 @@ main section .bottom .text button {
   padding: 0.7rem 1rem;
   border-radius: 0.5rem;
 }
+main section.view2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  letter-spacing: 0.15rem;
+}
+main section.view2 .top,
+main section.view2 .bottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+main section.view2 .top .element,
+main section.view2 .bottom .element {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+main section.view2 .top .element small,
+main section.view2 .bottom .element small {
+  opacity: 0.6;
+}
+main section.view2 .top .element h2,
+main section.view2 .bottom .element h2 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+main section.view3 .bottom .text h1 {
+  text-transform: uppercase;
+}
+main section.view3 .bottom > p {
+  text-transform: uppercase;
+}
+main section.view4 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+}
+main section.view4 .card {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-size: cover;
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+main section.view4 .card .icon,
+main section.view4 .card .bottom {
+  background-color: rgba(142, 142, 142, 0.375);
+  backdrop-filter: blur(8px);
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+main section.view4 .card .top {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+main section.view4 .card .icon {
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 50%;
+}
+main section.view4 .card .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+main section.view4 .card .bottom h2 {
+  font-weight: 400;
+}
+main section.view4 .card1 {
+  background-image: url(./w1.jpg);
+}
+main section.view4 .card2 {
+  background-image: url(./w2.jpg);
+}
+main section.view4 .card3 {
+  background-image: url(./w3.jpg);
+}
 
 @media (min-width: 900px) {
-  main section {
+  main section.view1 {
     flex-direction: row;
     padding: 1rem 4rem;
   }
-  main section .top,
-  main section .bottom {
+  main section.view1 .top,
+  main section.view1 .bottom {
     width: 50%;
   }
-  main section .bottom {
+  main section.view1 .bottom {
     justify-content: space-between;
     padding: 3rem;
   }
-  main section .bottom .text {
+  main section.view1 .bottom .text {
     gap: 1.5rem;
   }
-  main section .bottom .text h1 {
+  main section.view1 .bottom .text h1 {
     font-size: 3.5rem;
   }
-  main section .bottom .text p {
+  main section.view1 .bottom .text p {
     width: 60%;
     font-size: 1rem;
+  }
+  main section.view2 {
+    flex-direction: row;
+  }
+  main section.view3 {
+    flex-direction: row-reverse;
+  }
+  main section.view3 .bottom .text .text-para {
+    display: flex;
+    gap: 2rem;
+  }
+  main section.view4 {
+    flex-direction: row;
+    padding: 1rem 4rem;
   }
 }/*# sourceMappingURL=style.css.map */
