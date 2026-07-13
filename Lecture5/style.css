@@ -1,0 +1,27 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#bulb{
+    margin: 50px 250px;
+    height: 250px;
+    width: 250px;
+    background-color: rgba(191, 191, 105, 0.573);
+    border-radius: 50%;
+}
+#btn{
+    display: flex;
+    flex-direction :row;
+    align-items: center;
+    margin: 0 300px;
+    gap: 50px;
+}
+#btn button{
+    padding: 10px;
+    background-color: bisque;
+}
