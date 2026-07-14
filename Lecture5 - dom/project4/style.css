@@ -43,6 +43,7 @@ body{
     object-fit: cover;
     object-position: top;
     margin: 0;
+    cursor: pointer;
 }
 
 #like{
@@ -50,4 +51,5 @@ body{
     border: none;
     font-size: 25px;
     margin: 10px 0;
+    cursor: pointer;
 }

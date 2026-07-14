@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: bisque;
+}
+#box {
+  height: 300px;
+  width: 300px;
+  border: 10px solid white;
+  background-color: chocolate;
+}
+button {
+  font-size: 20px;
+  padding: 20px 30px;
+  background-color: blanchedalmond;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:active {
+  scale: 0.8;
+  background-color: aliceblue;
+}
