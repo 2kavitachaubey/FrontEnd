@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+    background: #05050a;
+    overflow: hidden;
+    position: relative;
+}
+
+.stars, .stars2, .stars3 {
+    position: absolute;
+    inset: 0;
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+.stars {
+    background-image:
+        radial-gradient(1.5px 1.5px at 20px 30px, #fff, transparent),
+        radial-gradient(1px 1px at 90px 120px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 150px 60px, #fff, transparent),
+        radial-gradient(1px 1px at 200px 180px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 60px 190px, #fff, transparent);
+    background-size: 220px 220px;
+    animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+.stars2 {
+    background-image:
+        radial-gradient(1px 1px at 40px 60px, #cfd8ff, transparent),
+        radial-gradient(1.5px 1.5px at 130px 20px, #cfd8ff, transparent),
+        radial-gradient(1px 1px at 180px 140px, #cfd8ff, transparent),
+        radial-gradient(1.5px 1.5px at 10px 150px, #cfd8ff, transparent);
+    background-size: 300px 300px;
+    animation: twinkle 4s ease-in-out infinite alternate-reverse;
+}
+
+.stars3 {
+    background-image:
+        radial-gradient(2px 2px at 70px 100px, #fff, transparent),
+        radial-gradient(2px 2px at 160px 190px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 220px 40px, #fff, transparent);
+    background-size: 400px 400px;
+    animation: drift 60s linear infinite;
+}
+
+#cursor{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    background-color: #f4f4f5d5;
+    transform: scale(1);
+    transition: left 0.3s linear, top 0.3s linear,transform 0.3s ease;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+@keyframes drift {
+    from { transform: translateY(0); }
+    to { transform: translateY(-400px); }
+}
+
+#main {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#main h3 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: #f4f4f5;
+    font-weight: 400;
+    text-align: center;
+    max-width: 500px;
+    z-index: 0;
+}
+
+.about-btn {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #f4f4f5;
+    background: #1c1c22;
+    border: 1px solid #3a3a42;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 9;
+}
+
+.about-btn:hover {
+    background: #2a2a33;
+    border-color: #6c63ff;
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.about-btn:active {
+    transform: translateY(0);
+}
