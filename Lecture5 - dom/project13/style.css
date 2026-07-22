@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#keys{
+    position: relative;
+    height: 250px;
+    width: 800px;
+    background-color: orange;
+    display: flex;
+}
+.whiteKey{
+    width: 100px;
+    height: 100%;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 12px;
+    font-weight: 600;
+    color: #555;
+    user-select: none;
+}
+.whiteKey.active{
+    background-color: #ccc;
+}
+
+#blackbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 45px;
+}
+.blackKey{
+    background-color: black;
+    width: 60px;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-weight: 600;
+    color: #ccc;
+    user-select: none;
+}
+.blackKey.active{
+    background-color: #555;
+}
