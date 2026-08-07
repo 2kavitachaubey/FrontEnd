@@ -24,7 +24,7 @@ body {
   justify-content: space-evenly;
   height: 100%;
   width: 100%;
-  background: radial-gradient(200px at var(--x) var(--y), white, black);
+  background: radial-gradient(200px at var(--x) var(--y), white, rgba(0, 0, 0, 0.938));
 }
 
 .card{
