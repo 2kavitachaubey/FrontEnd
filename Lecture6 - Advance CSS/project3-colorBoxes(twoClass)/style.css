@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.box {
+  height: 150px;
+  width: 150px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.red {
+  background-color: crimson;
+}
+
+.green {
+  background-color: seagreen;
+}
+
+.blue {
+  background-color: royalblue;
+}
+
+/* .box:hover{
+  transform: scale(1.2) !important;
+  opacity: 1 !important;
+} */
+
+body:has(.box:hover) .box{
+  transform: scale(0.8);
+  opacity: 0.8;
+}
+
+body:has(.box) .box:hover{
+  transform: scale(1.2) !important;
+  opacity: 1 !important;
+}
+
+/* we can do both ways */
