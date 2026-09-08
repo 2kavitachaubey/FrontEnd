@@ -101,4 +101,35 @@ function setupTodoList() {
     location.reload();
   });
 }
-setupTodoList();
+// setupTodoList();
+
+function setupDailyPlanner() {
+  let dayPlanData = JSON.parse(localStorage.getItem("dayPlanData")) || {};
+
+  let hours = Array.from(
+    { length: 18 },
+    (_, idx) => `${6 + idx}:00-${7 + idx}:00`,
+  );
+  let wholeDaySum = "";
+  hours.forEach((elem, idx) => {
+    wholeDaySum += `<div class="day-planner-time">
+            <p>${elem}</p>
+            <input id=${idx} type="text" placeholder="..." value=${
+              dayPlanData[idx] || ""
+            }>
+          </div>`;
+  });
+
+  let dayPlanner = document.querySelector(".day-planner");
+
+  dayPlanner.innerHTML = wholeDaySum;
+
+  let dayPlannerInput = document.querySelectorAll(".day-planner input");
+  dayPlannerInput.forEach((elem) => {
+    elem.addEventListener("input", () => {
+      dayPlanData[elem.id] = elem.value;
+      localStorage.setItem("dayPlanData", JSON.stringify(dayPlanData));
+    });
+  });
+}
+setupDailyPlanner();

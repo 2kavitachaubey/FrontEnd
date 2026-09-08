@@ -288,3 +288,54 @@ section.feature-grid {
 .task-item details p {
   font-weight: 300;
 }
+
+
+.daily-planner-fullPage{
+  display: block;
+}
+.daily-planner-fullPage h2{
+  font-size: 70px;
+}
+.daily-planner-fullPage .day-planner{
+  background-color: var(--sec);
+  height: 85%;
+  margin-top: 40px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+.daily-planner-fullPage .day-planner .day-planner-time{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 49%;
+  margin-bottom: 15px;
+}
+
+.day-planner .day-planner-time p{
+  position: absolute;
+  top: 5%;
+  left: 1%;
+  font-size: 18px;
+}
+
+.day-planner .day-planner-time input{
+  padding: 20px 40px;
+  width: 100%;
+  background-color: var(--pri);
+  border-radius: 5px;
+  border: none;
+  font-size: 25px;
+  padding-top: 30px;
+  outline: none;
+  font-weight: 300;
+}
+.day-planner .day-planner-time input::placeholder{
+  color: var(--quat);
+  opacity: 0.6;
+}
