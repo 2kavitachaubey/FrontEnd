@@ -101,7 +101,7 @@ function setupTodoList() {
     location.reload();
   });
 }
-// setupTodoList();
+setupTodoList();
 
 function setupDailyPlanner() {
   let dayPlanData = JSON.parse(localStorage.getItem("dayPlanData")) || {};
@@ -133,3 +133,136 @@ function setupDailyPlanner() {
   });
 }
 setupDailyPlanner();
+
+function setupMotivationQuote() {
+  let motivationQuote = document.querySelector(".motivation-2 h2");
+  let motivationAnthor = document.querySelector(".motivation-3 h2");
+  async function fetchQuote() {
+    let response = await fetch("https://api.quotable.io/random");
+    data = await response.json();
+    motivationQuote.innerHTML = data.content;
+    motivationAnthor.innerHTML = data.authorSlug;
+  }
+  fetchQuote();
+}
+setupMotivationQuote();
+
+function setupPomoTimer() {
+  let totalSeconds = 25 * 60;
+  let timeInterval = null;
+  let isWorkSession = true;
+
+  let timer = document.querySelector(".pomo-timer h2");
+  let startbtn = document.querySelector(".start-timer");
+  let pausebtn = document.querySelector(".pause-timer");
+  let resetbtn = document.querySelector(".reset-timer");
+  let wordAndBreak = document.querySelector('.pomo-timer h3')
+
+  function upDateTime() {
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    let timeSet = `${String(minutes).padStart("2", "0")}:${String(seconds).padStart("2", "0")}`;
+    timer.innerHTML = timeSet;
+  }
+
+  function startTimer() {
+    clearInterval(timeInterval);
+    if (isWorkSession) {
+      timeInterval = setInterval(() => {
+        if (totalSeconds > 0) {
+          totalSeconds--;
+          upDateTime();
+        } else {
+          isWorkSession = false;
+          clearInterval(timeInterval);
+          timer.innerHTML = "5:00";
+          wordAndBreak.innerHTML = 'Take a Break';
+          totalSeconds = 5 * 60;
+        }
+      }, 1000);
+    } else {
+      timeInterval = setInterval(() => {
+        if (totalSeconds > 0) {
+          totalSeconds--;
+          upDateTime();
+        } else {
+          isWorkSession = true;
+          clearInterval(timeInterval);
+          timer.innerHTML = "25:00";
+          wordAndBreak.innerHTML = 'Work Session';
+          totalSeconds = 25 * 60;
+        }
+      }, 1000);
+    }
+  }
+
+  function pauseTimer() {
+    clearInterval(timeInterval);
+  }
+
+  function resetTimer() {
+    clearInterval(timeInterval);
+    totalSeconds = 25 * 60;
+    timer.innerHTML = "25:00";
+  }
+
+  startbtn.addEventListener("click", startTimer);
+  pausebtn.addEventListener("click", pauseTimer);
+  resetbtn.addEventListener("click", resetTimer);
+}
+setupPomoTimer();
+
+function setupDailyGoals() {
+  let goalForm = document.querySelector(".goal-form-panel form");
+  let goalInput = document.querySelector(".goal-form-panel form input");
+
+  let goals = [];
+  if (localStorage.getItem("dailyGoals")) {
+    goals = JSON.parse(localStorage.getItem("dailyGoals"));
+  }
+
+  function renderGoals() {
+    localStorage.setItem("dailyGoals", JSON.stringify(goals));
+    let goalList = document.querySelector(".goal-list");
+    let goalListMarkup = "";
+    goals.forEach((goal) => {
+      goalListMarkup += `<div class="goal-item ${goal.completed ? "goal-done" : ""}">
+              <p>${goal.text}</p>
+              <div class="goal-actions">
+                <button class="complete-goal-button">${goal.completed ? "Completed" : "Not Complete"}</button>
+                <button class="delete-goal-button">Delete</button>
+              </div>
+            </div>`;
+    });
+    goalList.innerHTML = goalListMarkup;
+
+    let completeButtons = document.querySelectorAll(".complete-goal-button");
+    completeButtons.forEach((completeButton, index) => {
+      completeButton.addEventListener("click", () => {
+        goals[index].completed = !goals[index].completed;
+        renderGoals();
+      });
+    });
+
+    let deleteButtons = document.querySelectorAll(".delete-goal-button");
+    deleteButtons.forEach((deleteButton, index) => {
+      deleteButton.addEventListener("click", () => {
+        goals.splice(index, 1);
+        renderGoals();
+      });
+    });
+  }
+
+  renderGoals();
+
+  goalForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!goalInput.value.trim()) return;
+
+    goals.push({ text: goalInput.value, completed: false });
+    renderGoals();
+
+    goalInput.value = "";
+  });
+}
+setupDailyGoals();
