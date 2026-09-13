@@ -156,7 +156,7 @@ function setupPomoTimer() {
   let startbtn = document.querySelector(".start-timer");
   let pausebtn = document.querySelector(".pause-timer");
   let resetbtn = document.querySelector(".reset-timer");
-  let wordAndBreak = document.querySelector('.pomo-timer h3')
+  let wordAndBreak = document.querySelector(".pomo-timer h3");
 
   function upDateTime() {
     let minutes = Math.floor(totalSeconds / 60);
@@ -176,7 +176,7 @@ function setupPomoTimer() {
           isWorkSession = false;
           clearInterval(timeInterval);
           timer.innerHTML = "5:00";
-          wordAndBreak.innerHTML = 'Take a Break';
+          wordAndBreak.innerHTML = "Take a Break";
           totalSeconds = 5 * 60;
         }
       }, 1000);
@@ -189,7 +189,7 @@ function setupPomoTimer() {
           isWorkSession = true;
           clearInterval(timeInterval);
           timer.innerHTML = "25:00";
-          wordAndBreak.innerHTML = 'Work Session';
+          wordAndBreak.innerHTML = "Work Session";
           totalSeconds = 25 * 60;
         }
       }, 1000);
@@ -266,3 +266,79 @@ function setupDailyGoals() {
   });
 }
 setupDailyGoals();
+
+function setupDateAndTime() {
+  let apiKey = "d1079b3f4fee47ab98f175036261209";
+  let city = "haldwani";
+
+  let header1Day = document.querySelector(".header1 h1");
+  let header1Date = document.querySelector(".header1 h3");
+  let header2Temp = document.querySelector(".header2 h2");
+  let header2Prec = document.querySelector(".header2 .precipitation");
+  let header2Hum = document.querySelector(".header2 .humidity");
+  let header2Wind = document.querySelector(".header2 .wind");
+  let header2Weather = document.querySelector(".header2 .weather");
+  let data = null;
+
+  async function weatherAPICall() {
+    let response = await fetch(
+      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`,
+    );
+    data = await response.json();
+    console.log(data);
+    header2Temp.innerHTML = `${data.current.temp_c}°C`;
+    header2Prec.innerHTML = `Precipitation: ${data.current.chance_of_rain}%`;
+    header2Hum.innerHTML = `Humidity: ${data.current.humidity}%`;
+    header2Wind.innerHTML = `Wind: ${data.current.wind_mph} km/h`;
+    header2Weather.innerHTML = `${data.current.condition.text}`;
+  }
+  weatherAPICall();
+
+  let date = null;
+  function timeDate() {
+    const totalDaysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const monthsShort = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
+    date = new Date();
+    let dayOfWeek = totalDaysOfWeek[date.getDay()];
+    let hours = String(date.getHours()).padStart("2", "0");
+    let minutes = String(date.getMinutes()).padStart("2", 0);
+    let seconds = String(date.getSeconds()).padStart("2", 0);
+    let currentDate = date.getDate();
+    let currentMonth = monthsShort[date.getMonth()];
+    let currentYear = date.getFullYear();
+
+    if (hours > 12) {
+      header1Day.innerHTML = `${dayOfWeek}, ${hours - 12}:${minutes}:${seconds} PM`;
+    } else {
+      header1Day.innerHTML = `${dayOfWeek}, ${hours}:${minutes}:${seconds} AM`;
+    }
+    header1Date.innerHTML = `${currentDate} ${currentMonth} ${currentYear}`;
+  }
+
+  setInterval(() => {
+    timeDate();
+  }, 1000);
+}
+setupDateAndTime();

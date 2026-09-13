@@ -33,36 +33,92 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background-color: var(--pri);
 }
 
 #main {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   background-color: var(--pri);
 }
 
-nav {
-  position: fixed;
-  width: 100%;
-  height: 60px;
-  background-color: var(--tri);
-}
-
 section.feature-grid {
   position: absolute;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   padding: 40px;
-  padding-top: 80px;
+  padding-top: 50px;
+}
+
+.dashboard-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.dashboard-heading h1 {
+  font-size: 55px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--tri);
+}
+
+.dashboard-heading h1 span {
+  color: var(--sec);
+}
+
+.dashboard-heading p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 200;
+  opacity: 0.75;
+}
+
+.feature-grid header{
+  height: 350px;
+  width: 100%;
+  background: url(./jason-leung-10-qhRG5jB0-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 80px;
+}
+
+header .header1 h1{
+  font-size: 90px;
+  font-weight: 500;
+}
+header .header1 h3{
+  font-size: 45px;
+}
+header .header1 h4{
+  font-size: 50px;
+  font-weight: 500;
+}
+header .header2 h2{
+  font-size: 55px;
+  font-weight: 500;
+}
+header .header2 h3{
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.feature-grid .all-features{
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 40px;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: auto;
+  gap: 10px;
 }
 
 .feature-card {
   position: relative;
-  background-color: var(--sec);
+  background-color: var(--pri);
   height: 400px;
   width: 330px;
   font-size: 25px;
@@ -91,7 +147,7 @@ section.feature-grid {
 }
 
 .feature-page {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   background-color: var(--pri);
   padding: 20px;
@@ -121,6 +177,8 @@ section.feature-grid {
   opacity: 0.5;
 }
 
+/* To Do List */
+
 .todo-fullPage {
   /* display: block; */
 }
@@ -145,7 +203,6 @@ section.feature-grid {
   border-radius: 20px;
   padding: 35px 30px;
 }
-
 .task-form-panel form {
   height: 100%;
   display: flex;
@@ -154,7 +211,6 @@ section.feature-grid {
   flex-direction: column;
   gap: 10px;
 }
-
 .task-form-panel form input,
 .task-form-panel form textarea {
   width: 100%;
@@ -166,23 +222,19 @@ section.feature-grid {
   font-size: 18px;
   outline: none;
 }
-
 .task-form-panel form textarea {
   height: 65%;
   resize: none;
 }
-
 .task-form-panel .mark-imp {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 .task-form-panel .mark-imp #check {
   height: 22px;
   width: 22px;
 }
-
 .task-form-panel form button {
   padding: 15px 20px;
   border: none;
@@ -192,11 +244,9 @@ section.feature-grid {
   font-size: 18px;
   cursor: pointer;
 }
-
 .task-form-panel button:hover {
   box-shadow: 0 0 5px var(--pri);
 }
-
 .todo-fullPage .todo-container .task-list {
   width: 65%;
   background-color: var(--sec);
@@ -205,13 +255,11 @@ section.feature-grid {
   padding: 25px;
   overflow-y: auto;
 }
-
 .task-list h3,
 .task-list p {
   color: var(--pri);
   margin-bottom: 10px;
 }
-
 .task-item {
   display: flex;
   align-items: flex-start;
@@ -221,19 +269,16 @@ section.feature-grid {
   background-color: var(--tri);
   border-radius: 5px;
 }
-
 .task-item .task-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
 }
-
 .task-item h5 {
   color: var(--pri);
   font-size: 18px;
 }
-
 .task-item h5 span {
   background-color: red;
   color: var(--quat);
@@ -241,19 +286,16 @@ section.feature-grid {
   padding: 4px 6px;
   border-radius: 50px;
 }
-
 .task-item h5 span.true {
   opacity: 1;
 }
 .task-item h5 span.false {
   opacity: 0;
 }
-
 .task-actions {
   display: flex;
   gap: 8px;
 }
-
 .task-item button {
   padding: 8px 12px;
   border: none;
@@ -262,32 +304,28 @@ section.feature-grid {
   color: var(--tri);
   cursor: pointer;
 }
-
 .task-item button:hover {
   box-shadow: 0 0 5px var(--sec);
 }
-
 .complete-task-button {
   background-color: var(--quat);
   color: var(--pri);
 }
-
 .taskNotComplete {
   background-color: var(--pri);
   color: var(--quat);
 }
-
 .task-item details {
   font-size: 14px;
 }
-
 .task-item details summary {
   color: var(--pri);
 }
-
 .task-item details p {
   font-weight: 300;
 }
+
+/* Daily Planner */
 
 .daily-planner-fullPage {
   /* display: block; */
@@ -315,14 +353,12 @@ section.feature-grid {
   width: 49%;
   margin-bottom: 15px;
 }
-
 .day-planner .day-planner-time p {
   position: absolute;
   top: 5%;
   left: 1%;
   font-size: 18px;
 }
-
 .day-planner .day-planner-time input {
   padding: 20px 40px;
   width: 100%;
@@ -339,11 +375,12 @@ section.feature-grid {
   opacity: 0.6;
 }
 
+/* Motivation Quote */
+
 .motivation-fullPage {
   /* display: block; */
   position: relative;
 }
-
 .motivation-fullPage .motivation-container {
   height: 500px;
   width: 40%;
@@ -353,7 +390,6 @@ section.feature-grid {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .motivation-fullPage .motivation-container::after {
   content: "";
   height: 100%;
@@ -365,7 +401,6 @@ section.feature-grid {
   scale: 1.15;
   z-index: 8;
 }
-
 .motivation-fullPage .motivation-container .motivation-wrapper {
   z-index: 10;
   /* height: 100%; */
@@ -375,18 +410,15 @@ section.feature-grid {
   padding: 20px;
   border-radius: 40px;
 }
-
 .motivation-1 {
   background-color: var(--pri);
   padding: 25px;
   border-radius: 20px;
 }
-
 .motivation-1 h2 {
   font-size: 30px;
   font-weight: 500;
 }
-
 .motivation-2 {
   padding: 0 10px;
   display: flex;
@@ -394,23 +426,19 @@ section.feature-grid {
   gap: 10px;
   margin-top: 20px;
 }
-
 .motivation-2 h2 {
   font-size: 30px;
   font-weight: 500;
   color: var(--tri);
 }
-
 .motivation-2 .quote-mark {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
 }
-
 .motivation-2 .quote-mark:last-child {
   align-self: flex-end;
 }
-
 .motivation-3 {
   padding: 10px;
   margin-top: 10px;
@@ -421,19 +449,18 @@ section.feature-grid {
   text-align: right;
   color: var(--quat);
 }
-
 .motivation-wrapper img {
   padding: 0;
 }
 
+/* Pomodoro Timer */
+
 .pomodoro-fullPage {
   position: relative;
 }
-
 .pomodoro-fullPage h1 {
   font-size: 65px;
 }
-
 .pomodoro-fullPage .pomo-timer{
   position: absolute;
   top: 50%;
@@ -441,18 +468,15 @@ section.feature-grid {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
 .pomo-timer h2{
   font-size: 180px;
   font-weight: 500;
 }
-
 .pomo-timer h3{
   font-size: 70px;
   font-weight: 500;
   opacity: 0.75;
 }
-
 .pomo-timer button{
   background-color: var(--sec);
   padding: 10px 20px;
@@ -464,10 +488,11 @@ section.feature-grid {
   box-shadow: 3px 3px 0 var(--quat);
   transition: all ease 0.3s;
 }
-
 .pomo-timer button:active{
   box-shadow: none;
 }
+
+/* Daily Goals */
 
 .daily-goals-fullPage h2 {
   font-size: 65px;
@@ -492,14 +517,12 @@ section.feature-grid {
   display: flex;
   flex-direction: column;
 }
-
 .goal-form-heading {
   font-size: 22px;
   font-weight: 500;
   opacity: 0.8;
   margin-bottom: 25px;
 }
-
 .goal-form-panel form {
   height: 100%;
   display: flex;
@@ -508,7 +531,6 @@ section.feature-grid {
   flex-direction: column;
   gap: 18px;
 }
-
 .goal-form-panel form input {
   width: 100%;
   padding: 18px;
@@ -522,12 +544,10 @@ section.feature-grid {
     border-color ease 0.3s,
     box-shadow ease 0.3s;
 }
-
 .goal-form-panel form input:focus {
   border-color: var(--pri);
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
 }
-
 .goal-form-panel form button {
   padding: 15px 25px;
   border: none;
@@ -540,17 +560,14 @@ section.feature-grid {
   box-shadow: 3px 3px 0 var(--quat);
   transition: all ease 0.2s;
 }
-
 .goal-form-panel button:hover {
   transform: translate(-2px, -2px);
   box-shadow: 5px 5px 0 var(--quat);
 }
-
 .goal-form-panel button:active {
   transform: translate(0, 0);
   box-shadow: none;
 }
-
 .daily-goals-fullPage .goals-container .goal-list {
   width: 65%;
   background-color: var(--sec);
@@ -562,7 +579,6 @@ section.feature-grid {
   flex-direction: column;
   gap: 15px;
 }
-
 .goal-item {
   display: flex;
   align-items: center;
@@ -577,32 +593,26 @@ section.feature-grid {
     box-shadow ease 0.2s,
     opacity ease 0.2s;
 }
-
 .goal-item:hover {
   transform: translateX(4px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
-
 .goal-item p {
   color: var(--pri);
   font-size: 18px;
   font-weight: 500;
 }
-
 .goal-item.goal-done {
   border-left-color: var(--sec);
   opacity: 0.55;
 }
-
 .goal-item.goal-done p {
   text-decoration: line-through;
 }
-
 .goal-actions {
   display: flex;
   gap: 8px;
 }
-
 .goal-item button {
   padding: 8px 16px;
   border-radius: 20px;
@@ -611,19 +621,16 @@ section.feature-grid {
   cursor: pointer;
   transition: all ease 0.2s;
 }
-
 .complete-goal-button {
   border: none;
   background-color: var(--pri);
   color: var(--tri);
 }
-
 .delete-goal-button {
   background-color: transparent;
   color: var(--pri);
   border: 1.5px solid var(--pri);
 }
-
 .goal-item button:hover {
   box-shadow: 0 0 5px var(--sec);
   transform: translateY(-2px);
