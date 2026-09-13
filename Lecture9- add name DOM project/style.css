@@ -37,7 +37,7 @@ body {
 }
 
 #main {
-  min-height: 100%;
+  height: 100%;
   width: 100%;
   background-color: var(--pri);
 }
@@ -147,7 +147,7 @@ header .header2 h3{
 }
 
 .feature-page {
-  min-height: 100%;
+  height: 100%;
   width: 100%;
   background-color: var(--pri);
   padding: 20px;
@@ -329,6 +329,7 @@ header .header2 h3{
 
 .daily-planner-fullPage {
   /* display: block; */
+  position: relative;
 }
 .daily-planner-fullPage h2 {
   font-size: 70px;
