@@ -1,4 +1,4 @@
 let circle = () =>{
-    return React.createElement('div',{class:'circle'})
+    return React.createElement('div',{className:'circle'})
 }
 export default circle;

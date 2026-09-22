@@ -1,15 +1,15 @@
 let homeHeading = ()=>{
     let homeBigHeading = React.createElement(
     "h1",
-    { class: "hero-title" },
+    { className: "hero-title" },
     "HELLO",
   );
   let homePara = React.createElement(
     "p",
-    { class: "hero-subtitle" },
+    { className: "hero-subtitle" },
     "-It's D.Nova a design wizerd",
   );
-  return React.createElement('div',{class:'hero-text'},[homeBigHeading,homePara]);
+  return React.createElement('div',{className:'hero-text'},[homeBigHeading,homePara]);
 }
 
 export default homeHeading;
