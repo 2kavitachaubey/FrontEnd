@@ -7,12 +7,16 @@ const Todo = () => {
   const [role, setRole] = useState("");
   const [description, setDescription] = useState("");
 
-  const [allUsers, setAllUsers] = useState([]);
+  const localData = JSON.parse(localStorage.getItem("userData")) || [];
+
+  const [allUsers, setAllUsers] = useState(localData);
 
   const submitHandler = (e) => {
     e.preventDefault();
-
-    setAllUsers([...allUsers, { name, imageURL, role, description }]);
+    const oldData = [...allUsers];
+    oldData.push({ name, imageURL, role, description });
+    setAllUsers(oldData);
+    localStorage.setItem("userData", JSON.stringify(userData));
 
     setName("");
     setRole("");
@@ -24,6 +28,7 @@ const Todo = () => {
     const copyUser = [...allUsers];
     copyUser.splice(index, 1);
     setAllUsers(copyUser);
+    localStorage.setItem("userData", JSON.stringify(copyUser));
   };
 
   return (
