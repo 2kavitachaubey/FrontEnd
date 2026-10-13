@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+.bg-color {
+  height: 100vh;
+  width: 100vw;
+}
+.light {
+  background-color: wheat;
+}
+.dark {
+  background-color: black;
+}
+
+.heading {
+  text-align: center;
+  font-size: 32px;
+}
+.clight {
+  color: black;
+}
+.cdark {
+  color: white;
+}
