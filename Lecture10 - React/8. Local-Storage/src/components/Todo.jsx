@@ -16,7 +16,7 @@ const Todo = () => {
     const oldData = [...allUsers];
     oldData.push({ name, imageURL, role, description });
     setAllUsers(oldData);
-    localStorage.setItem("userData", JSON.stringify(userData));
+    localStorage.setItem("userData", JSON.stringify(oldData));
 
     setName("");
     setRole("");

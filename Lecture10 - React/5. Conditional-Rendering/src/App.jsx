@@ -34,7 +34,7 @@ const App = () => {
       {/* Conditional-Rendering */}
       {person.map((elem, idx) =>
         elem.gender === "male" ? (
-          elem.age >= 18 ? (
+          elem.age >= 8 ? (
             <Male key={idx} />
           ) : (
             <Female key={idx} />

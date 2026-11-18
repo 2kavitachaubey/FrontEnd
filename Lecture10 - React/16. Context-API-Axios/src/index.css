@@ -1,0 +1,111 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f6f5f1;
+  color: #202923;
+  font-family: Arial, sans-serif;
+}
+
+/* Home page */
+#root > div > div:has(> button) {
+  min-height: 100vh;
+  padding: 40px 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(135deg, #e4eadc, #f6f5f1 70%);
+}
+
+#root > div > div > h1 {
+  max-width: 700px;
+  margin: 0 0 28px;
+  font-family: Georgia, serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+button {
+  padding: 15px 26px;
+  border: 0;
+  border-radius: 6px;
+  background: #365940;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+button:hover { background: #284732; transform: translateY(-2px); }
+button:focus-visible, .product:focus-visible { outline: 3px solid #81aa87; outline-offset: 4px; }
+
+/* Product cards */
+.allProducts {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+.allProducts > div {
+  overflow: hidden;
+  background: white;
+  border: 1px solid #e6e9e2;
+  border-radius: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.allProducts > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(38, 58, 39, 0.1);
+}
+.product { display: block; height: 100%; padding: 24px; color: inherit; text-decoration: none; }
+.product img { display: block; width: 100%; height: 210px; margin-bottom: 24px; object-fit: contain; }
+.product h1 { margin: 0 0 12px; font-size: 17px; line-height: 1.4; }
+.product h4 { margin: 0 0 12px; color: #365940; font-size: 19px; }
+.product h4::before { content: "$"; }
+.product p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  margin: 0;
+  color: #7b827b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .allProducts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 24px 16px; }
+  .product { padding: 16px; }
+  .product img { height: 150px; margin-bottom: 18px; }
+  .product h1 { font-size: 14px; }
+  .product p { font-size: 12px; }
+}
+
+
+/* Product details */
+.details-page { max-width: 1200px; margin: 0 auto; padding: 48px 5% 80px; }
+.details-back, .details-message a { color: #365940; font-size: 14px; font-weight: 700; text-decoration: none; }
+.details-back:hover, .details-message a:hover { text-decoration: underline; }
+.details-card { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; margin-top: 28px; padding: clamp(24px, 4vw, 48px); border: 1px solid #e6e9e2; border-radius: 18px; background: #fff; }
+.details-image { display: flex; align-items: center; justify-content: center; min-height: 440px; padding: 32px; border-radius: 12px; background: #f8f9f6; }
+.details-image img { display: block; width: 100%; max-height: 380px; object-fit: contain; mix-blend-mode: multiply; }
+.details-category { margin: 0 0 14px; color: #778a77; font-size: 12px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+.details-content h1 { margin: 0 0 18px; font-family: Georgia, serif; font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1.15; }
+.details-rating { color: #ad873d; font-weight: 700; }
+.details-rating span { color: #858b85; font-size: 14px; font-weight: 400; }
+.details-price { margin: 24px 0; color: #365940; font-size: 28px; }
+.details-description { padding-top: 24px; border-top: 1px solid #e6e9e2; }
+.details-description h2 { margin: 0 0 12px; font-size: 15px; }
+.details-description p { margin: 0; color: #707a71; line-height: 1.75; }
+.details-message { padding: 48px 5%; color: #707a71; }
+.details-message a { margin-left: 12px; }
+@media (max-width: 700px) {
+  .details-page { padding: 28px 16px 48px; }
+  .details-card { grid-template-columns: 1fr; gap: 28px; padding: 20px; }
+  .details-image { min-height: 280px; }
+  .details-image img { max-height: 260px; }
+}
