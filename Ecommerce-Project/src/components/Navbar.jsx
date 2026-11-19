@@ -16,7 +16,7 @@ const Navbar = () => {
           Cart<span>ify</span>
         </Link>
 
-        <SearchBar onSearch={closeMenu} />
+        <SearchBar />
 
         <nav className={menuOpen ? "nav-links open" : "nav-links"}>
           <NavLink to="/" end onClick={closeMenu}>Home</NavLink>
